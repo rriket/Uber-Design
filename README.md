@@ -3,11 +3,13 @@
 A production-shaped **Uber-style ride-sharing platform** built as a resume-ready reference project. Implements the full ride flow — fare estimation with tiered pricing → ride request → durable Temporal-based driver matching → live driver notifications → post-trip ratings → Prometheus/Grafana observability — using industry-standard patterns: distributed locking, Redis geospatial search, OAuth2 (Keycloak), an API gateway, adaptive location heartbeat, and a WebSocket push channel.
 
 > **Tech Stack**
-> Java 17 · Spring Boot 3.2 · Spring Cloud Gateway · Spring Security (OAuth2 Resource Server) · Spring Data JPA · Spring Data Redis · WebSocket · **Temporal 1.24 (durable workflows)** · PostgreSQL 16 · Redis 7 · Keycloak 24 · **Prometheus + Grafana** (Micrometer) · Docker Compose · React 18 · Google Maps JS + Distance-Matrix APIs
+**Java 26** · Spring Boot 3.2 · Spring Cloud Gateway · Spring Security (OAuth2 Resource Server) · Spring Data JPA · Spring Data Redis · WebSocket · **Temporal 1.24 (durable workflows)** · **Apache Kafka (KRaft mode)** · PostgreSQL 16 · Redis 7 · Keycloak 24 · **Prometheus + Grafana** (Micrometer) · Docker Compose · React 18 · Google Maps JS + Distance-Matrix APIs
 
 ---
 
 ## 1. Architecture
+
+For a concise system map and deployment notes, see [docs/architecture.md](docs/architecture.md).
 
 Every service is behind an **API gateway** and communicates with peers via a **Kafka event bus** — not point-to-point REST. This keeps services loosely coupled: any consumer can crash and catch up on restart without dropping work.
 
@@ -115,12 +117,12 @@ uber-clone/
 
 ## 3. Prerequisites
 
-| Tool | Version |
-|---|---|
-| **JDK** | 17 (any distribution) |
-| **Docker Desktop** | 4.x (or Docker Engine + Compose v2) |
-| **Node.js** | 18+ (only for the React frontend) |
-| **IntelliJ IDEA** | 2023.3+ (Community edition is fine) |
+| Tool | Version                                                   |
+|---|-----------------------------------------------------------|
+| **JDK** | 26 (Temurin, OpenJDK, or another compatible distribution) |
+| **Docker Desktop** | 4.x (or Docker Engine + Compose v2)                       |
+| **Node.js** | 18+ (only for the React frontend)                         |
+| **IntelliJ IDEA** | 2023.3+ (Community edition is fine)                       |
 
 Optional: Maven CLI. The bundled `./mvnw` wrapper works if you don't install Maven globally.
 
