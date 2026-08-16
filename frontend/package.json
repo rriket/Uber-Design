@@ -1,0 +1,25 @@
+{
+  "name": "uber-clone-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@react-google-maps/api": "^2.19.3",
+    "keycloak-js": "^24.0.5",
+    "lucide-react": "^0.446.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  },
+  "proxy": "http://localhost:8080"
+}
