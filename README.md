@@ -3,7 +3,7 @@
 A production-shaped **Uber-style ride-sharing platform** built as a resume-ready reference project. Implements the full ride flow — fare estimation with tiered pricing → ride request → durable Temporal-based driver matching → live driver notifications → post-trip ratings → Prometheus/Grafana observability — using industry-standard patterns: distributed locking, Redis geospatial search, OAuth2 (Keycloak), an API gateway, adaptive location heartbeat, and a WebSocket push channel.
 
 > **Tech Stack**
-**Java 26** · Spring Boot 3.2 · Spring Cloud Gateway · Spring Security (OAuth2 Resource Server) · Spring Data JPA · Spring Data Redis · WebSocket · **Temporal 1.24 (durable workflows)** · **Apache Kafka (KRaft mode)** · PostgreSQL 16 · Redis 7 · Keycloak 24 · **Prometheus + Grafana** (Micrometer) · Docker Compose · React 18 · Google Maps JS + Distance-Matrix APIs
+**Java 21** · Spring Boot 3.2 · Spring Cloud Gateway · Spring Security (OAuth2 Resource Server) · Spring Data JPA · Spring Data Redis · WebSocket · **Temporal 1.24 (durable workflows)** · **Apache Kafka (KRaft mode)** · PostgreSQL 16 · Redis 7 · Keycloak 24 · **Prometheus + Grafana** (Micrometer) · Docker Compose · React 18 · Google Maps JS + Distance-Matrix APIs
 
 ---
 
@@ -119,7 +119,7 @@ uber-clone/
 
 | Tool | Version                                                   |
 |---|-----------------------------------------------------------|
-| **JDK** | 26 (Temurin, OpenJDK, or another compatible distribution) |
+| **JDK** | 21 (Temurin, OpenJDK, or another compatible distribution) |
 | **Docker Desktop** | 4.x (or Docker Engine + Compose v2)                       |
 | **Node.js** | 18+ (only for the React frontend)                         |
 | **IntelliJ IDEA** | 2023.3+ (Community edition is fine)                       |
