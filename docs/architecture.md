@@ -1,6 +1,6 @@
 # Architecture Overview
 
-This repository is a Java 26, multi-module Spring Boot microservices platform modeled after an Uber-style ride-sharing system.
+This repository is a Java 21, multi-module Spring Boot microservices platform modeled after an Uber-style ride-sharing system.
 
 ## Core topology
 
@@ -29,6 +29,8 @@ This repository is a Java 26, multi-module Spring Boot microservices platform mo
 - Temporal for resilient, replayable matching workflows.
 - Keycloak for OAuth2 identity and role-based access.
 
-## Java 26 baseline
+## Java 21 baseline
 
-The repository is configured to build with Java 26 and updated Maven dependencies suitable for a modern JDK baseline. CI runs against Temurin JDK 26, and the parent Maven build config sets the compiler release to 26.
+The repository targets Java 21. The CI workflow uses Temurin JDK 21, and the parent Maven build is configured with Java 21 as its compiler release.
+
+The project previously documented Java 26, but the build was moved to Java 21 because the current Spring Boot 3.2.x baseline is not compatible with the Java 26 class-file level used by the previous CI configuration. Java 21 is the supported build/runtime baseline for the current project configuration.
